@@ -13,22 +13,26 @@ public class App
     {
         DecimalFormat f = new DecimalFormat("##.00");
         Scanner scanner = new Scanner(System.in);
-        float principal, interestRate, years, finalValue;
+        double principal, interestRate, years, timesCompounded, finalValue;
 
-        System.out.println( "Enter the principal: " );
+        System.out.println( "What is the principal amount? " );
         principal = scanner.nextFloat();
 
-        System.out.println( "Enter the rate of interest: " );
+        System.out.println( "What is the rate? " );
         interestRate = scanner.nextFloat();
 
-        System.out.println( "Enter the number of years: " );
+        System.out.println( "What is the number of years? " );
         years = scanner.nextFloat();
 
+        System.out.println( "What is the number of times the interest is compounded per year? " );
+        timesCompounded = scanner.nextFloat();
+
         interestRate /= 100;
-        finalValue = principal * (1 + interestRate*years);
+        finalValue = principal * Math.pow((1 + interestRate/timesCompounded),(timesCompounded*years));
         interestRate *= 100;
 
-        System.out.println( "After " + (int)years + " years at " + interestRate +
-                "%, the investment will be worth $" + f.format(finalValue));
+        System.out.println( "$" + f.format(principal) + " invested at " + (float)interestRate +
+                "% for " + (int)years + " years compounded " + timesCompounded +
+                " times per year is $" + f.format(finalValue));
     }
 }

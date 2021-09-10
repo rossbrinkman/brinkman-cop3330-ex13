@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="brinkman-cop3330-ex05" />
         <module name="brinkman-cop3330-ex12" />
+        <module name="brinkman-cop3330-ex13" />
       </profile>
     </annotationProcessing>
   </component>
